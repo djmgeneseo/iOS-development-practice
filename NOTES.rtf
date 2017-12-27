@@ -2,10 +2,10 @@
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;\red211\green24\blue149;\red0\green0\blue0;\red255\green255\blue255;
 \red65\green204\blue69;\red0\green160\blue255;\red35\green255\blue131;\red120\green109\blue255;\red255\green44\blue56;
-}
+\red27\green31\blue34;\red244\green246\blue249;\red31\green118\blue44;}
 {\*\expandedcolortbl;;\csgenericrgb\c82800\c9500\c58300;\csgenericrgb\c0\c0\c0;\csgenericrgb\c100000\c100000\c100000;
 \csgenericrgb\c25500\c80100\c27000;\csgenericrgb\c0\c62600\c100000;\csgenericrgb\c13700\c100000\c51200;\csgenericrgb\c46900\c42600\c100000;\csgenericrgb\c100000\c17100\c21900;
-}
+\cssrgb\c14118\c16078\c18039;\cssrgb\c96471\c97255\c98039;\cssrgb\c13333\c52549\c22745;}
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -130,7 +130,7 @@ nil pointer error = when trying to do something with value set to nil\
 \f1\fs22 \cf4         \cf2 if\cf4  \cf2 let\cf4  userSetDestination = \cf7 destination\cf4  \{
 \f0\fs24 \cf0 \
 
-\f1\fs22 \cf4             \cf6 print\cf4 (\cf9 \cb3 "Driving towards "\cf4 \cb3  + userSetDestination + \cf9 \cb3 "..."\cf4 \cb3 )
+\f1\fs22 \cf4             \cf6 print\cf4 (\cf9 "Driving towards "\cf4  + userSetDestination + \cf9 "..."\cf4 )
 \f0\fs24 \cf0 \
 
 \f1\fs22 \cf4         \}\
@@ -147,14 +147,160 @@ print(destination!)\
 Do NOT need \'91!\'92 When using optional binding (if let userSetDestination = destination \{\'85.userSetDestination\})\
 \
 \'97\'97\'97\
+Cocoapods: \
+	console:\
+	- pod init\
+	- open -a Xcode Podfile\
+		Podfile:\
+		- remove \'91#\'92 in-front of platform\
+		- add pods under \'91# Pods for Clima\'92\
+		- pod \'91Swift JSON\'92\
+		- pod \'91Alamofire\'92\
+		- pod \'92SVProgressHUD\'92\
+	- pod install \
+		- MUST use xcworkspace from now on. This file will have your cocoapod data\
+\'97\'97\'97\
+Import CoreLocation = access latitude and longitude of phone\
+	- class WeatherViewController: UIViewController, CLLocationManagerDelegate \{ \'85\}\
+	- IN WEATHERVIEWCONTROLLER: \
+		let locationManager = CLLocationManager()\
+	- IN VIEWDIDLOAD() : \
+		locationManager.delegate = self\
+		locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters\
+		locationManager.requestWhenInUseAuthorization()\
+	- IN INFO.PLIST UNDER SUPPORTING FILES:\
+		Privacy - Location When In Use Usage Description\
+		Privacy - Location Usage Description\
+	- OUTSIDE OF VIEWDIDLOAD() BUT INSIDE WEATHERVIEWCONTROLLER\
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf4 \cb3     \cf5 //MARK: - Location Manager Delegate Methods
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \cf5 /***************************************************************/
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \cf5 //Write the didUpdateLocations method here:
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \cf5 // This method is activated once locationManger finds a location
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \cf2 func\cf4  locationManager(\cf2 _\cf4  manager: \cf6 CLLocationManager\cf4 , didUpdateLocations locations: [\cf6 CLLocation\cf4 ]) \{
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4         
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \}
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \cf5 //Write the didFailWithError method here:
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \cf5 // This method is activated if locationManger CANNOT find a location
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \cf2 func\cf4  locationManager(\cf2 _\cf4  manager: \cf6 CLLocationManager\cf4 , didFailWithError error: \cf6 Error\cf4 ) \{
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4         
+\f0\fs24 \cf0 \
+
+\f1\fs22 \cf4     \}
+\f0\fs24 \cf0 \
+\cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97 \
+http://www.restapitutorial.com/httpstatuscodes.html\
+HTTP requests: Apple devices can only communicate to APIs that have HTTPS data transfer.\
+	Right-click Info.plist and select Open As\'85 and click Source Code\
+	Copy+Paste this below a </string>\
+		
+\f1\fs27\fsmilli13600 \cf10 \cb11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 <\cf12 \strokec12 key\cf10 \strokec10 >NSAppTransportSecurity</\cf12 \strokec12 key\cf10 \strokec10 >\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf10 	<\cf12 \strokec12 dict\cf10 \strokec10 >\
+		<\cf12 \strokec12 key\cf10 \strokec10 >NSExceptionDomains</\cf12 \strokec12 key\cf10 \strokec10 >\
+		<\cf12 \strokec12 dict\cf10 \strokec10 >\
+			<\cf12 \strokec12 key\cf10 \strokec10 >openweathermap.org</\cf12 \strokec12 key\cf10 \strokec10 >\
+			<\cf12 \strokec12 dict\cf10 \strokec10 >\
+				<\cf12 \strokec12 key\cf10 \strokec10 >NSIncludesSubdomains</\cf12 \strokec12 key\cf10 \strokec10 >\
+				<\cf12 \strokec12 true\cf10 \strokec10 />\
+				<\cf12 \strokec12 key\cf10 \strokec10 >NSTemporaryExceptionAllowsInsecureHTTPLoads</\cf12 \strokec12 key\cf10 \strokec10 >\
+				<\cf12 \strokec12 true\cf10 \strokec10 />\
+			</\cf12 \strokec12 dict\cf10 \strokec10 >\
+		</\cf12 \strokec12 dict\cf10 \strokec10 >\
+	</\cf12 \strokec12 dict\cf10 \strokec10 >
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+The following are different HTTP requests:\
+	GET - retrieve data and should have no other effect\
+	HEAD - retrieve meta-information written in response headers, without having to transport the entire content\
+	POST - pass data to server and add data into that server. requests that the server accept the entity enclosed in the request as a new subordinate of the web resource identified by the URI. \
+	PUT - Requests that the enclosed entity be stored under the supplied URI.\
+	DELETE - Make a request to server to delete data in server\
+	TRACE - Echoes the received request so that a client can see what (if any) changes or additions have been made by intermediate servers.\
+	OPTIONS - Returns the HTTP methods that the server supports for the specified URL.  Can be used to check the functionality of a web server \'91*\'92 instead of a specific resource\
+	CONNECT - Converts the request connection to a transparent TCP/IP tunnel, usually to facilitate SSL-encrypted communication (HTTPS) through an unencrypted HTTP proxy (HTTP CONNECT tunneling)\
+	PATCH - applies partial modifications to a resource\
 \
+HOW NETWORKS WORK:\
+	When logging onto a website, your computer makes a request to the website server. Passes URL or address. Website Server sends response in the form of javascript, html, and css.\
+	Sending a GET request using an api. Providing parameters to get weather data. Server responds with weather data.\
+\'97\'97\'97\'97\'97\
 \
+JSON is essentially a bunch of key value objects\
+JSON = JavaScript Object Notation - used in many languages and applications, b/c it\'92s a way to format large pieces of data passed around on the internet.\
+	For most packages received from public API\'92s, the format of that data will most likely be in the JSON datatype\
+\
+www.jsoneditoronline.org\
+\
+\'97\'97\'97\'97\'97\
+Delegation: pass data from class A to class B when we don\'92t know the properties of one of the classes, or if the CLASS doesn\'92t know the properties of your custom class (which it never will)\
+	Delegating data to a controller class\
+\'97 \'97\'97\'97\'97\'97 \
+API = Application Program Interface\
+	API specifies things you need to provide (parameters) in requests so that the API can deliver 		data\
+	Lat, long, and apiid	to get weather data\
+	Can also have your program scrape internet for data, but if website changes, then the program 		will break\
+\'97\'97\'97\'97\
+Closure = function within a function\
+	whenever you see the word \'93in\'94, then you know you\'92re inside a closure.\
+	When calling a function, when you\'92re inside a closure, when you\'92re inside \'91in\'92, you MUST 	declare self. In-front of function.\
+	\'91self.\'92 will refer to the current controller view class you\'92re programming in.\
+\'97\'97\'97\'97\'97\
+Segue - Allows you to link view controller with another view controller, or elements within a view controller to another view controller. \
+	create new view controller	\
+	1) click on button element in one view controller, ctrl + click & drag to another view controller, 		and select the transition. \
+		create swift file that controls view controller: command + \'92n\'92, Cocoa Touch Class, 		change class in pane that\'92s one option left of attributes pane in right-hand sidebar to 		new Cocoa Touch Class\
+	2) ctrl + click & drag orange circular button with white center to new view controller\
+		click segue and change identifier prompt in attribute pane to some variable\
+		copy and paste \'91chosenVariable\'92  under some button action: 				performSegue(withIdentifier: \'93chosenVariable\'94, sender: self) \
+\
+TO PASS DATA:\
+	I made a new project for this\
+\'97\'97\'97\'97\'97\
 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 {\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=QyjyWUrHsFc&feature=youtu.be"}}{\fldrslt \cf0 https://www.youtube.com/watch?v=QyjyWUrHsFc&feature=youtu.be}}\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/content/qa/qa1686/_index.html"}}{\fldrslt \cf0 https://developer.apple.com/library/content/qa/qa1686/_index.html}}\
-{\field{\*\fldinst{HYPERLINK "https://developer.apple.com/ios/human-interface-guidelines/overview/themes/"}}{\fldrslt https://developer.apple.com/ios/human-interface-guidelines/overview/themes/}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://developer.apple.com/ios/human-interface-guidelines/overview/themes/"}}{\fldrslt \cf0 https://developer.apple.com/ios/human-interface-guidelines/overview/themes/}}\
 \
 Debugging: www.osstatus.com}
