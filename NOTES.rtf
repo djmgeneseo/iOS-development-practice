@@ -230,21 +230,21 @@ HTTP requests: Apple devices can only communicate to APIs that have HTTPS data t
 	Copy+Paste this below a </string>\
 		
 \f1\fs27\fsmilli13600 \cf10 \cb11 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec10 <\cf12 \strokec12 key\cf10 \strokec10 >NSAppTransportSecurity</\cf12 \strokec12 key\cf10 \strokec10 >\
+<\cf12 key\cf10 >NSAppTransportSecurity</\cf12 key\cf10 >\
 \pard\pardeftab720\sl380\partightenfactor0
-\cf10 	<\cf12 \strokec12 dict\cf10 \strokec10 >\
-		<\cf12 \strokec12 key\cf10 \strokec10 >NSExceptionDomains</\cf12 \strokec12 key\cf10 \strokec10 >\
-		<\cf12 \strokec12 dict\cf10 \strokec10 >\
-			<\cf12 \strokec12 key\cf10 \strokec10 >openweathermap.org</\cf12 \strokec12 key\cf10 \strokec10 >\
-			<\cf12 \strokec12 dict\cf10 \strokec10 >\
-				<\cf12 \strokec12 key\cf10 \strokec10 >NSIncludesSubdomains</\cf12 \strokec12 key\cf10 \strokec10 >\
-				<\cf12 \strokec12 true\cf10 \strokec10 />\
-				<\cf12 \strokec12 key\cf10 \strokec10 >NSTemporaryExceptionAllowsInsecureHTTPLoads</\cf12 \strokec12 key\cf10 \strokec10 >\
-				<\cf12 \strokec12 true\cf10 \strokec10 />\
-			</\cf12 \strokec12 dict\cf10 \strokec10 >\
-		</\cf12 \strokec12 dict\cf10 \strokec10 >\
-	</\cf12 \strokec12 dict\cf10 \strokec10 >
-\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\cf10 	<\cf12 dict\cf10 >\
+		<\cf12 key\cf10 >NSExceptionDomains</\cf12 key\cf10 >\
+		<\cf12 dict\cf10 >\
+			<\cf12 key\cf10 >openweathermap.org</\cf12 key\cf10 >\
+			<\cf12 dict\cf10 >\
+				<\cf12 key\cf10 >NSIncludesSubdomains</\cf12 key\cf10 >\
+				<\cf12 true\cf10 />\
+				<\cf12 key\cf10 >NSTemporaryExceptionAllowsInsecureHTTPLoads</\cf12 key\cf10 >\
+				<\cf12 true\cf10 />\
+			</\cf12 dict\cf10 >\
+		</\cf12 dict\cf10 >\
+	</\cf12 dict\cf10 >
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
 The following are different HTTP requests:\
@@ -294,6 +294,15 @@ Segue - Allows you to link view controller with another view controller, or elem
 TO PASS DATA:\
 	I made a new project for this\
 \'97\'97\'97\'97\'97\
+Protocols are in the same hierarchal level as classes: belong above classes.\
+	- Use protocols when you want to send data BACK to a view; ie, when you want to DISMISS a 	view in order to RETURN to an EXISTING, and importantly the PREVIOUS view. \
+	- THINK OF VIEWS AS A STACK!!!! WHEN YOU SEGUE TO A VIEW, YOU\'92RE REALLY JUST 	CREATING A BRAND NEW VIEW OF CLASS CUSTOMVIEWCONTROLLER!\
+	- Methods inside of the protocol should NOT have a body; only parameters! Only sets up rules 	of engagement; NOT the logic. MUST be able to and MUST actually implement the methods 	inside of protocol in delegate view controller class!!!!\
+\'97\'97\'97\'97\'97\
+Table views are NOT tables; they\'92re cells (rows) that can be grouped in sections\
+	- xib files are custom cells used to display information in table views\
+	- xib = nib\
+\'97\'97\'97\'97\'97\'97\'97\
 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
