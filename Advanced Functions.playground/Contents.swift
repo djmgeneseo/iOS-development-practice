@@ -66,6 +66,7 @@ print(arrayEx.map({$0+1}))
 // turn each array element into string
 print(arrayEx.map({"\($0)"}))
 
+print(9.truncatingRemainder(dividingBy: 4))
 
 
 

@@ -11,7 +11,8 @@
 		635FE5C01FF0C2FC0081D8F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FE5BF1FF0C2FC0081D8F9 /* ViewController.swift */; };
 		635FE5C31FF0C2FC0081D8F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635FE5C11FF0C2FC0081D8F9 /* Main.storyboard */; };
 		635FE5C51FF0C2FC0081D8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635FE5C41FF0C2FC0081D8F9 /* Assets.xcassets */; };
-		635FE5C81FF0C2FC0081D8F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635FE5C61FF0C2FC0081D8F9 /* LaunchScreen.storyboard */; };
+		63DEB1F81FFB3BB6004B8F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEB1F61FFB3BB5004B8F11 /* LaunchScreen.storyboard */; };
+		63DEB1F91FFB3BB6004B8F11 /* SKINNO.png in Resources */ = {isa = PBXBuildFile; fileRef = 63DEB1F71FFB3BB5004B8F11 /* SKINNO.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +21,9 @@
 		635FE5BF1FF0C2FC0081D8F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		635FE5C21FF0C2FC0081D8F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		635FE5C41FF0C2FC0081D8F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		635FE5C71FF0C2FC0081D8F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		635FE5C91FF0C2FC0081D8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63DEB1F61FFB3BB5004B8F11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63DEB1F71FFB3BB5004B8F11 /* SKINNO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKINNO.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +56,12 @@
 		635FE5BC1FF0C2FC0081D8F9 /* I Am Rich */ = {
 			isa = PBXGroup;
 			children = (
+				63DEB1F61FFB3BB5004B8F11 /* LaunchScreen.storyboard */,
+				63DEB1F71FFB3BB5004B8F11 /* SKINNO.png */,
 				635FE5BD1FF0C2FC0081D8F9 /* AppDelegate.swift */,
 				635FE5BF1FF0C2FC0081D8F9 /* ViewController.swift */,
 				635FE5C11FF0C2FC0081D8F9 /* Main.storyboard */,
 				635FE5C41FF0C2FC0081D8F9 /* Assets.xcassets */,
-				635FE5C61FF0C2FC0081D8F9 /* LaunchScreen.storyboard */,
 				635FE5C91FF0C2FC0081D8F9 /* Info.plist */,
 			);
 			path = "I Am Rich";
@@ -123,7 +126,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635FE5C81FF0C2FC0081D8F9 /* LaunchScreen.storyboard in Resources */,
+				63DEB1F91FFB3BB6004B8F11 /* SKINNO.png in Resources */,
+				63DEB1F81FFB3BB6004B8F11 /* LaunchScreen.storyboard in Resources */,
 				635FE5C51FF0C2FC0081D8F9 /* Assets.xcassets in Resources */,
 				635FE5C31FF0C2FC0081D8F9 /* Main.storyboard in Resources */,
 			);
@@ -150,14 +154,6 @@
 				635FE5C21FF0C2FC0081D8F9 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		635FE5C61FF0C2FC0081D8F9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				635FE5C71FF0C2FC0081D8F9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -277,11 +273,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6AA4U45PD;
 				INFOPLIST_FILE = "I Am Rich/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DavidMurphy.I-Am-Rich";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -292,11 +289,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6AA4U45PD;
 				INFOPLIST_FILE = "I Am Rich/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DavidMurphy.I-Am-Rich";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -303,6 +303,16 @@ Table views are NOT tables; they\'92re cells (rows) that can be grouped in secti
 	- xib files are custom cells used to display information in table views\
 	- xib = nib\
 \'97\'97\'97\'97\'97\'97\'97\
+PERSISTENT DATA STORAGE:\
+USE USERDEFAULTS\
+let defaults = UserDefaults.standard\
+defaults.set(self.itemArray, forKey: \'93TodoListArray\'94)\
+defaults.array(forKey: \'93TodoListArray\'94)\
+	- DO NOT USE USERDEFAULTS FOR ANYTHING OTHER THAN SIMPLE TYPES. Do not use objects, especially personalized objects!!!!!!!\
+\
+USE ENCODER/DECODERS \
+	- When using custom class structures; i.e, anything other than standard data types\
+\'97\'97\'97\'97\'97\'97\'97\
 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0

@@ -11,7 +11,8 @@
 		635FE5DE1FF0D6D70081D8F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FE5DD1FF0D6D70081D8F9 /* ViewController.swift */; };
 		635FE5E11FF0D6D70081D8F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635FE5DF1FF0D6D70081D8F9 /* Main.storyboard */; };
 		635FE5E31FF0D6D70081D8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635FE5E21FF0D6D70081D8F9 /* Assets.xcassets */; };
-		635FE5E61FF0D6D70081D8F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635FE5E41FF0D6D70081D8F9 /* LaunchScreen.storyboard */; };
+		63DEB1F41FFB3B06004B8F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEB1F21FFB3B05004B8F11 /* LaunchScreen.storyboard */; };
+		63DEB1F51FFB3B06004B8F11 /* SKINNO.png in Resources */ = {isa = PBXBuildFile; fileRef = 63DEB1F31FFB3B06004B8F11 /* SKINNO.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +21,9 @@
 		635FE5DD1FF0D6D70081D8F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		635FE5E01FF0D6D70081D8F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		635FE5E21FF0D6D70081D8F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		635FE5E51FF0D6D70081D8F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		635FE5E71FF0D6D70081D8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63DEB1F21FFB3B05004B8F11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63DEB1F31FFB3B06004B8F11 /* SKINNO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SKINNO.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +56,12 @@
 		635FE5DA1FF0D6D70081D8F9 /* Dicee */ = {
 			isa = PBXGroup;
 			children = (
+				63DEB1F21FFB3B05004B8F11 /* LaunchScreen.storyboard */,
+				63DEB1F31FFB3B06004B8F11 /* SKINNO.png */,
 				635FE5DB1FF0D6D70081D8F9 /* AppDelegate.swift */,
 				635FE5DD1FF0D6D70081D8F9 /* ViewController.swift */,
 				635FE5DF1FF0D6D70081D8F9 /* Main.storyboard */,
 				635FE5E21FF0D6D70081D8F9 /* Assets.xcassets */,
-				635FE5E41FF0D6D70081D8F9 /* LaunchScreen.storyboard */,
 				635FE5E71FF0D6D70081D8F9 /* Info.plist */,
 			);
 			path = Dicee;
@@ -123,9 +126,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635FE5E61FF0D6D70081D8F9 /* LaunchScreen.storyboard in Resources */,
+				63DEB1F41FFB3B06004B8F11 /* LaunchScreen.storyboard in Resources */,
 				635FE5E31FF0D6D70081D8F9 /* Assets.xcassets in Resources */,
 				635FE5E11FF0D6D70081D8F9 /* Main.storyboard in Resources */,
+				63DEB1F51FFB3B06004B8F11 /* SKINNO.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,14 +154,6 @@
 				635FE5E01FF0D6D70081D8F9 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		635FE5E41FF0D6D70081D8F9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				635FE5E51FF0D6D70081D8F9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -277,11 +273,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6AA4U45PD;
 				INFOPLIST_FILE = Dicee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DavidMurphy.Dicee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -292,11 +289,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6AA4U45PD;
 				INFOPLIST_FILE = Dicee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DavidMurphy.Dicee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     
     func updateUI() {
         // Convert int to string
-        scoreLabel.text = "\(score)"
+        scoreLabel.text = "Score: \(score)"
         // Convert int to string
         progressLabel.text = "\(questionNumber+1) / \(allQuestions.list.count)"
         // view.frame.size.width is the entire screen's width. Must convert questionNumber to type of first number being multiplied, which is CGFloat
